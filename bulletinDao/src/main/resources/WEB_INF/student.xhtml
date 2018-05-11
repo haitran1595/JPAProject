@@ -1,0 +1,27 @@
+
+
+<jsp:useBean id="studentDao" type="student.StudentDao" scope="request" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head>
+        <title>JPA studentbook Web Application Tutorial</title>
+    </head>
+
+    <body>
+        <form method="POST" action="student.html">
+            Name: <input type="text" name="name" />
+            <input type="submit" value="Add" />
+        </form>
+
+        <hr><ol> 
+        <% for (Student student : studentDao.getAllStudents()) { %>
+            <li> <%= student %> </li>
+        <% } %>
+        </ol><hr>
+
+        <iframe src="http://www.objectdb.com/pw.html?spring-eclipse"
+            frameborder="0" scrolling="no" width="100%" height="30"> </iframe>
+     </body>
+ </html>
+
